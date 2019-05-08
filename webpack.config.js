@@ -1,3 +1,5 @@
+const nodeExternals = require('webpack-node-externals');
+
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
@@ -10,5 +12,7 @@ module.exports = {
       loader: 'ts-loader',
       exclude: /node_modules/
     }]
-  }
+  },
+  target: 'node',
+  externals: [nodeExternals()],
 }
